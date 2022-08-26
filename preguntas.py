@@ -22,7 +22,7 @@ def pregunta_01():
 
     """
     url =  "https://raw.githubusercontent.com/ciencia-de-los-datos/programacion-en-python-dsmejiarod/main/data.csv"
-    !wget --quiet {url} -P /tmp/
+    wget --quiet {url} -P /tmp/
     #!ls -1 /tmp/*
     with open("/tmp/data.csv", "r") as file:
         data = file.readlines()
