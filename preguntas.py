@@ -21,7 +21,17 @@ def pregunta_01():
     214
 
     """
-    return
+    url =  "https://raw.githubusercontent.com/ciencia-de-los-datos/programacion-en-python-dsmejiarod/main/data.csv"
+    !wget --quiet {url} -P /tmp/
+    #!ls -1 /tmp/*
+    with open("/tmp/data.csv", "r") as file:
+        data = file.readlines()
+    data = [line.replace("\n", "") for line in data]
+    data = [line.replace("\t", ";") for line in data]
+    data = [line.split(";") for line in data]
+    list_s = [int(row[1]) for row in data]
+    suma = sum(list_s)
+    return suma
 
 
 def pregunta_02():
